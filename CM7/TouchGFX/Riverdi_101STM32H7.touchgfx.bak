@@ -1,0 +1,2491 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "logo",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image1",
+            "Width": 1280,
+            "Height": 800,
+            "RelativeFilename": "HomeKONCEPT-NH-707-L-zdjecie-3.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image5",
+            "X": 446,
+            "Y": 206,
+            "Width": 388,
+            "Height": 388,
+            "RelativeFilename": "Ellipse-logo.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image6",
+            "X": 488,
+            "Y": 263,
+            "Width": 304,
+            "Height": 275,
+            "RelativeFilename": "logo.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionDelay",
+              "Duration": 1500
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "Interaction1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "main"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "main",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 1280,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image20",
+            "Width": 1280,
+            "Height": 800,
+            "RelativeFilename": "main_screen.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image4",
+            "Width": 297,
+            "Height": 59,
+            "Visible": false,
+            "LockPosition": true,
+            "RelativeFilename": "main.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toogle_kitchen",
+            "X": 1028,
+            "Y": 164,
+            "Width": 78,
+            "Height": 33,
+            "Pressed": "Toogle_ON.png",
+            "Released": "Toogle_OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toogle_bedroom",
+            "X": 1028,
+            "Y": 211,
+            "Width": 78,
+            "Height": 33,
+            "Pressed": "Toogle_ON.png",
+            "Released": "Toogle_OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toogle_living",
+            "X": 1028,
+            "Y": 258,
+            "Width": 78,
+            "Height": 33,
+            "Pressed": "Toogle_ON.png",
+            "Released": "Toogle_OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toogle_bathroom",
+            "X": 1028,
+            "Y": 306,
+            "Width": 78,
+            "Height": 33,
+            "Pressed": "Toogle_ON.png",
+            "Released": "Toogle_OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toogle_garage",
+            "X": 1028,
+            "Y": 355,
+            "Width": 78,
+            "Height": 33,
+            "Pressed": "Toogle_ON.png",
+            "Released": "Toogle_OFF.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "kitchen",
+            "X": 821,
+            "Y": 167,
+            "Width": 81,
+            "Height": 29,
+            "TextId": "__SingleUse_FCFO",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bedroom",
+            "X": 821,
+            "Y": 215,
+            "Width": 97,
+            "Height": 29,
+            "TextId": "__SingleUse_H0SH",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "living",
+            "X": 821,
+            "Y": 261,
+            "Width": 129,
+            "Height": 29,
+            "TextId": "__SingleUse_OIB1",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom",
+            "X": 821,
+            "Y": 307,
+            "Width": 104,
+            "Height": 29,
+            "TextId": "__SingleUse_LS76",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "garage",
+            "X": 821,
+            "Y": 357,
+            "Width": 75,
+            "Height": 29,
+            "TextId": "__SingleUse_HVUZ",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "lampka_kuchnia",
+            "X": 768,
+            "Y": 160,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "Bulb_ON.png",
+            "Released": "bulb_offf.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "lampka_bedroom",
+            "X": 768,
+            "Y": 208,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "Bulb_ON.png",
+            "Released": "bulb_offf.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "lampka_living",
+            "X": 768,
+            "Y": 255,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "Bulb_ON.png",
+            "Released": "bulb_offf.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "lampka_bathroom",
+            "X": 768,
+            "Y": 303,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "Bulb_ON.png",
+            "Released": "bulb_offf.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "lampka_garage",
+            "X": 768,
+            "Y": 352,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "Bulb_ON.png",
+            "Released": "bulb_offf.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_QX50",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 768,
+            "Y": 646,
+            "Width": 318,
+            "Height": 103,
+            "Pressed": "arm2.png",
+            "Released": "arm.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_Q5EM",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1",
+            "X": 360,
+            "Y": 566,
+            "Width": 340,
+            "Height": 21,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "Line5.png",
+            "BackgroundSelected": "Line51.png",
+            "Indicator": "Ellipse46.png",
+            "BackgroundX": 10,
+            "BackgroundY": 10,
+            "IndicatorMax": 319,
+            "ValueMax": 100,
+            "InitValue": 33
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1",
+            "X": 365,
+            "Y": 518,
+            "Width": 86,
+            "Height": 29,
+            "TextId": "__SingleUse_WMH8",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1_1",
+            "X": 603,
+            "Y": 518,
+            "Width": 63,
+            "Height": 39,
+            "TextId": "__SingleUse_ZRYH",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1_1_1",
+            "X": 670,
+            "Y": 511,
+            "Width": 18,
+            "Height": 39,
+            "TextId": "__SingleUse_E8GD",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1_1",
+            "X": 360,
+            "Y": 688,
+            "Width": 340,
+            "Height": 21,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "Line5.png",
+            "BackgroundSelected": "Line51.png",
+            "Indicator": "Ellipse46.png",
+            "BackgroundX": 10,
+            "BackgroundY": 10,
+            "IndicatorMax": 319,
+            "ValueMax": 100,
+            "InitValue": 33
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1_2",
+            "X": 365,
+            "Y": 640,
+            "Width": 119,
+            "Height": 29,
+            "TextId": "__SingleUse_7HXT",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1_1_2",
+            "X": 603,
+            "Y": 640,
+            "Width": 63,
+            "Height": 39,
+            "TextId": "__SingleUse_FESG",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bathroom_1_1_1_1",
+            "X": 670,
+            "Y": 633,
+            "Width": 18,
+            "Height": 39,
+            "TextId": "__SingleUse_LCFJ",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "map",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Graph",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Cameras",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "configuration",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "settings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          },
+          {
+            "InteractionName": "notifications",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "notifications"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "map",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_QCKX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 992,
+            "Y": 715,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_1TBP",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          },
+          {
+            "Type": "Image",
+            "Name": "Image21",
+            "X": 339,
+            "Y": 103,
+            "Width": 789,
+            "Height": 661,
+            "RelativeFilename": "draw-2d-and-3d-map-for-your-house.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 885,
+            "Y": 259,
+            "Width": 113,
+            "Height": 52,
+            "Pressed": "temp23-2.png",
+            "Released": "temp23-1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton2",
+            "X": 843,
+            "Y": 512,
+            "Width": 113,
+            "Height": 52,
+            "Pressed": "temp22-2.png",
+            "Released": "temp22-1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton3",
+            "X": 443,
+            "Y": 328,
+            "Width": 113,
+            "Height": 52,
+            "Pressed": "temp21-2.png",
+            "Released": "temp21-1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4",
+            "X": 614,
+            "Y": 338,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1",
+            "X": 698,
+            "Y": 233,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1_1",
+            "X": 788,
+            "Y": 259,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1_1_1",
+            "X": 885,
+            "Y": 332,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1_1_1_1",
+            "X": 825,
+            "Y": 407,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1_1_1_1_1",
+            "X": 773,
+            "Y": 504,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton4_1_1_1_1_1_1",
+            "X": 672,
+            "Y": 452,
+            "Width": 52,
+            "Height": 52,
+            "Pressed": "light2.png",
+            "Released": "light1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton5",
+            "X": 948,
+            "Y": 338,
+            "Width": 159,
+            "Height": 177,
+            "Pressed": "cam1-2.png",
+            "Released": "cam1.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton6",
+            "X": 546,
+            "Y": 594,
+            "Width": 211,
+            "Height": 125,
+            "Pressed": "cam2-1.png",
+            "Released": "cam2.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton7",
+            "X": 451,
+            "Y": 174,
+            "Width": 211,
+            "Height": 125,
+            "Pressed": "cam3-1.png",
+            "Released": "cam3.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton8",
+            "X": 397,
+            "Y": 400,
+            "Width": 159,
+            "Height": 177,
+            "Pressed": "cam4-1.png",
+            "Released": "cam4.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "notifications"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "graph",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image19",
+            "Width": 1280,
+            "Height": 800,
+            "RelativeFilename": "graph_screen.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "google_edit",
+            "X": 989,
+            "Y": 719,
+            "Width": 194,
+            "Height": 61,
+            "RelativeFilename": "edit3.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit2",
+            "X": 83,
+            "Y": 9,
+            "Width": 185,
+            "Height": 83,
+            "RelativeFilename": "edit1.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit3",
+            "X": 1060,
+            "Y": 15,
+            "Width": 160,
+            "Height": 63,
+            "RelativeFilename": "edit2.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_W8XL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_N962",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "notifications"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "camera",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image18",
+            "Width": 1280,
+            "Height": 800,
+            "RelativeFilename": "cameras_screen.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "google_edit",
+            "X": 989,
+            "Y": 719,
+            "Width": 194,
+            "Height": 61,
+            "RelativeFilename": "edit3.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit2",
+            "X": 83,
+            "Y": 9,
+            "Width": 185,
+            "Height": 83,
+            "RelativeFilename": "edit1.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit3",
+            "X": 1060,
+            "Y": 15,
+            "Width": 160,
+            "Height": 63,
+            "RelativeFilename": "edit2.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_CJL8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_P9UO",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "notifications"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "configuration",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "google_edit",
+            "X": 989,
+            "Y": 719,
+            "Width": 194,
+            "Height": 61,
+            "RelativeFilename": "edit3.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit2",
+            "X": 83,
+            "Y": 9,
+            "Width": 185,
+            "Height": 83,
+            "RelativeFilename": "edit1.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit3",
+            "X": 1060,
+            "Y": 15,
+            "Width": 160,
+            "Height": 63,
+            "RelativeFilename": "edit2.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_NXWE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration_1",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 651,
+            "Y": 361,
+            "Width": 274,
+            "Height": 78,
+            "TextId": "__SingleUse_CYYR",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_M7DS",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "nofitications",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "google_edit",
+            "X": 989,
+            "Y": 719,
+            "Width": 194,
+            "Height": 61,
+            "RelativeFilename": "edit3.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit2",
+            "X": 83,
+            "Y": 9,
+            "Width": 185,
+            "Height": 83,
+            "RelativeFilename": "edit1.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit3",
+            "X": 1060,
+            "Y": 15,
+            "Width": 160,
+            "Height": 63,
+            "RelativeFilename": "edit2.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_054O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 364,
+            "Y": 92,
+            "Width": 276,
+            "Height": 29,
+            "TextId": "__SingleUse_GP7E",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image18",
+            "X": 319,
+            "Y": 88,
+            "Width": 36,
+            "Height": 36,
+            "RelativeFilename": "Bulb_ON.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_9PWG",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settings"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "settings",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box4",
+            "Width": 1280,
+            "Height": 800,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 297,
+            "Height": 800,
+            "Color": {
+              "Red": 247,
+              "Green": 247,
+              "Blue": 247
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 297,
+            "Width": 983,
+            "Height": 63,
+            "Color": {
+              "Red": 23,
+              "Green": 143,
+              "Blue": 207
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Image17",
+            "X": 13,
+            "Y": 729,
+            "Width": 226,
+            "Height": 71,
+            "RelativeFilename": "logo_sidebar.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "google_edit",
+            "X": 989,
+            "Y": 719,
+            "Width": 194,
+            "Height": 61,
+            "RelativeFilename": "edit3.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit2",
+            "X": 83,
+            "Y": 9,
+            "Width": 185,
+            "Height": 83,
+            "RelativeFilename": "edit1.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "Image",
+            "Name": "edit3",
+            "X": 1060,
+            "Y": 15,
+            "Width": 160,
+            "Height": 63,
+            "RelativeFilename": "edit2.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dee",
+            "X": 319,
+            "Y": 17,
+            "Width": 132,
+            "Height": 29,
+            "TextId": "__SingleUse_CCRS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "main_page",
+            "Y": 122,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "main2.png",
+            "Released": "main.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "map_1",
+            "Y": 181,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "map2.png",
+            "Released": "map.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "graphs",
+            "Y": 240,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "graph2.png",
+            "Released": "graph.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "cameras",
+            "Y": 299,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "cameras2.png",
+            "Released": "cameras.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "configuration",
+            "Y": 538,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "configuration2.png",
+            "Released": "configuration.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "notifications",
+            "Y": 656,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "notifications2.png",
+            "Released": "notifications.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "settings_1",
+            "Y": 597,
+            "Width": 297,
+            "Height": 59,
+            "Pressed": "settings2.png",
+            "Released": "settings2.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 651,
+            "Y": 361,
+            "Width": 223,
+            "Height": 78,
+            "TextId": "__SingleUse_W7JS",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "google",
+            "X": 989,
+            "Y": 719,
+            "Width": 272,
+            "Height": 68,
+            "Pressed": "google.png",
+            "Released": "google2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "conf",
+            "X": 1076,
+            "Y": 8,
+            "Width": 188,
+            "Height": 86,
+            "Pressed": "conf_icon.png",
+            "Released": "conf_icon2.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "name",
+            "X": 13,
+            "Y": 9,
+            "Width": 178,
+            "Height": 54,
+            "Pressed": "name_icon.png",
+            "Released": "name_icon2.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 175,
+            "Y": 19,
+            "Width": 100,
+            "Height": 25,
+            "TextColor": {
+              "Red": 62,
+              "Green": 169,
+              "Blue": 174
+            },
+            "TextId": "__SingleUse_XSSU",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 9,
+            "InitialMinute": 34
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "main_page"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "main"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "map_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "map"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "graphs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "graph"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cameras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "camera"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "configuration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "configuration"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "notifications"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "nofitications"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 1280,
+      "Height": 800
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "logo",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "32": "LCD32bpp",
+      "24": "LCD24bpp",
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 1280,
+        "Height": 800
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../../Riverdi_101STM32H7.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7"
+  },
+  "Version": "4.18.1"
+}
