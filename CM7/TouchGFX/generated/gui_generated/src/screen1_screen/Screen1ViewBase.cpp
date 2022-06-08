@@ -3,6 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -10,7 +12,30 @@ Screen1ViewBase::Screen1ViewBase()
     __background.setPosition(0, 0, 1280, 800);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
+    image1.setXY(0, 0);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
+
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_MSALAMON_PL_NOWE_TRANSPARENT_ID));
+    scalableImage1.setPosition(192, 0, 896, 208);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    buttonWithLabel1.setXY(555, 311);
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_YAH7));
+    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
+    buttonWithLabel1_1.setXY(555, 449);
+    buttonWithLabel1_1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonWithLabel1_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_HD2Q));
+    buttonWithLabel1_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
     add(__background);
+    add(image1);
+    add(scalableImage1);
+    add(buttonWithLabel1);
+    add(buttonWithLabel1_1);
 }
 
 void Screen1ViewBase::setupScreen()
