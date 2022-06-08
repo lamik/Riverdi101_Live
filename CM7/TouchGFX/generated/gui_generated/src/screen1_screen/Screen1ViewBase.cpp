@@ -6,39 +6,60 @@
 #include <BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
 
     __background.setPosition(0, 0, 1280, 800);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
+    imageBackground.setXY(0, 0);
+    imageBackground.setBitmap(touchgfx::Bitmap(BITMAP_BG_ID));
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_MSALAMON_PL_NOWE_TRANSPARENT_ID));
-    scalableImage1.setPosition(192, 0, 896, 208);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    imageLogo.setBitmap(touchgfx::Bitmap(BITMAP_MSALAMON_PL_NOWE_TRANSPARENT_ID));
+    imageLogo.setPosition(192, 0, 896, 208);
+    imageLogo.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
-    buttonWithLabel1.setXY(555, 311);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_YAH7));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOn.setXY(555, 311);
+    buttonLedOn.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonLedOn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_YAH7));
+    buttonLedOn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOn.setAction(buttonCallback);
 
-    buttonWithLabel1_1.setXY(555, 449);
-    buttonWithLabel1_1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel1_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_HD2Q));
-    buttonWithLabel1_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOff.setXY(555, 449);
+    buttonLedOff.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonLedOff.setLabelText(touchgfx::TypedText(T___SINGLEUSE_HD2Q));
+    buttonLedOff.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOff.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonLedOff.setAction(buttonCallback);
 
     add(__background);
-    add(image1);
-    add(scalableImage1);
-    add(buttonWithLabel1);
-    add(buttonWithLabel1_1);
+    add(imageBackground);
+    add(imageLogo);
+    add(buttonLedOn);
+    add(buttonLedOff);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonLedOn)
+    {
+        //LedOnClicked
+        //When buttonLedOn clicked call virtual function
+        //Call LedOnClicked
+        LedOnClicked();
+    }
+    else if (&src == &buttonLedOff)
+    {
+        //LedOffClicked
+        //When buttonLedOff clicked call virtual function
+        //Call LedOffClicked
+        LedOffClicked();
+    }
 }

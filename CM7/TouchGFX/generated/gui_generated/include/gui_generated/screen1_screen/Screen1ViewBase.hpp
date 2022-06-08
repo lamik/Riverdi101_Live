@@ -19,6 +19,19 @@ public:
     virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void LedOnClicked()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void LedOffClicked()
+    {
+        // Override and implement this function in Screen1
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -28,12 +41,22 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::ScalableImage scalableImage1;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
-    touchgfx::ButtonWithLabel buttonWithLabel1_1;
+    touchgfx::Image imageBackground;
+    touchgfx::ScalableImage imageLogo;
+    touchgfx::ButtonWithLabel buttonLedOn;
+    touchgfx::ButtonWithLabel buttonLedOff;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

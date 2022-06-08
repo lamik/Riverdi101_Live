@@ -6,7 +6,7 @@
         "Components": [
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "imageBackground",
             "Width": 1280,
             "Height": 800,
             "LockPosition": true,
@@ -14,7 +14,7 @@
           },
           {
             "Type": "ScalableImage",
-            "Name": "scalableImage1",
+            "Name": "imageLogo",
             "X": 192,
             "Width": 896,
             "Height": 208,
@@ -24,7 +24,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
+            "Name": "buttonLedOn",
             "X": 555,
             "Y": 311,
             "Width": 170,
@@ -48,7 +48,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1_1",
+            "Name": "buttonLedOff",
             "X": 555,
             "Y": 449,
             "Width": 170,
@@ -71,7 +71,30 @@
             "Style": "Style4"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "LedOnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLedOn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LedOnClicked"
+            }
+          },
+          {
+            "InteractionName": "LedOffClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLedOff"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LedOffClicked"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
