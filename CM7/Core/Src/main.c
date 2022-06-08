@@ -146,8 +146,8 @@ Error_Handler();
   MX_FMC_Init();
   MX_I2C1_Init();
   MX_LTDC_Init();
- // MX_QUADSPI_Init();
- // MX_SDMMC1_SD_Init();
+//  MX_QUADSPI_Init();
+//  MX_SDMMC1_SD_Init();
   MX_USART1_UART_Init();
   MX_I2C4_Init();
   MX_DAC1_Init();
@@ -181,17 +181,16 @@ Error_Handler();
 	  CSP_QSPI_EnableMemoryMappedMode();
   }
 
+	if (HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1) != HAL_OK)
+	{
+	/* PWM Generation Error */
+		Error_Handler();
+	}
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
-
-  if (HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1) != HAL_OK)
-    {
-      /* PWM Generation Error */
-      Error_Handler();
-    }
-
   /* Start scheduler */
   osKernelStart();
 

@@ -1,3 +1,4 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file    quadspi.c
@@ -6,20 +7,20 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
-
+/* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "quadspi.h"
 
+/* USER CODE BEGIN 0 */
 
 #ifdef MICRON_QSPI
 #define CHIP_ERASE_CMD 0xC4
@@ -61,34 +62,26 @@
 #define DUMMY_CLOCK_CYCLES_READ_QUAD ( 8UL )
 #endif
 
-/* USER CODE BEGIN 0 */
+#define READ_STATUS_REG1_CMD                  0x05
+#define READ_STATUS_REG2_CMD                  0x35
+#define READ_STATUS_REG3_CMD                  0x15
 
+#define WRITE_STATUS_REG1_CMD                 0x01
+#define WRITE_STATUS_REG2_CMD                 0x31
+#define WRITE_STATUS_REG3_CMD                 0x11
 
-    #define READ_STATUS_REG1_CMD                  0x05
-    #define READ_STATUS_REG2_CMD                  0x35
-    #define READ_STATUS_REG3_CMD                  0x15
-
-    #define WRITE_STATUS_REG1_CMD                 0x01
-    #define WRITE_STATUS_REG2_CMD                 0x31
-    #define WRITE_STATUS_REG3_CMD                 0x11
-
+static uint8_t QSPI_Enter4Bytes(void);
+static uint8_t QSPI_EnterQuad(void);
+static uint8_t QSPI_WriteDisable(void);
+static uint8_t QSPI_WriteEnable(void);
+static uint8_t QSPI_WriteEnable_Quad(void);
+uint8_t QSPI_AutoPollingMemReady(void);
+uint8_t QSPI_AutoPollingMemReady_Quad(void);
 
 /* USER CODE END 0 */
 
 QSPI_HandleTypeDef hqspi;
 
-static uint8_t
-QSPI_Enter4Bytes( void );
-static uint8_t
-QSPI_EnterQuad( void );
-static uint8_t
-QSPI_WriteDisable( void );
-static uint8_t
-QSPI_WriteEnable( void );
-static uint8_t
-QSPI_WriteEnable_Quad( void );
-uint8_t QSPI_AutoPollingMemReady( void );
-uint8_t QSPI_AutoPollingMemReady_Quad( void );
 /* QUADSPI init function */
 void MX_QUADSPI_Init(void)
 {
@@ -168,33 +161,33 @@ void HAL_QSPI_MspInit(QSPI_HandleTypeDef* qspiHandle)
     PF9     ------> QUADSPI_BK1_IO1
     PB2     ------> QUADSPI_CLK
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_6;
+    GPIO_InitStruct.Pin = QSPI_BK1_NCS_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF10_QUADSPI;
-    HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+    HAL_GPIO_Init(QSPI_BK1_NCS_GPIO_Port, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+    GPIO_InitStruct.Pin = QSPI_BK1_IO3_Pin|QSPI_BK1_IO2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF9_QUADSPI;
     HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
+    GPIO_InitStruct.Pin = QSPI_BK1_IO0_Pin|QSPI_BK1_IO1_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF10_QUADSPI;
     HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_2;
+    GPIO_InitStruct.Pin = QSPI_CLK_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF9_QUADSPI;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    HAL_GPIO_Init(QSPI_CLK_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN QUADSPI_MspInit 1 */
 
@@ -202,17 +195,44 @@ void HAL_QSPI_MspInit(QSPI_HandleTypeDef* qspiHandle)
   }
 }
 
+void HAL_QSPI_MspDeInit(QSPI_HandleTypeDef* qspiHandle)
+{
 
-uint8_t
-CSP_QSPI_EraseSector( uint32_t EraseStartAddress, uint32_t EraseEndAddress )
+  if(qspiHandle->Instance==QUADSPI)
+  {
+  /* USER CODE BEGIN QUADSPI_MspDeInit 0 */
+
+  /* USER CODE END QUADSPI_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_QSPI_CLK_DISABLE();
+
+    /**QUADSPI GPIO Configuration
+    PG6     ------> QUADSPI_BK1_NCS
+    PF6     ------> QUADSPI_BK1_IO3
+    PF7     ------> QUADSPI_BK1_IO2
+    PF8     ------> QUADSPI_BK1_IO0
+    PF9     ------> QUADSPI_BK1_IO1
+    PB2     ------> QUADSPI_CLK
+    */
+    HAL_GPIO_DeInit(QSPI_BK1_NCS_GPIO_Port, QSPI_BK1_NCS_Pin);
+
+    HAL_GPIO_DeInit(GPIOF, QSPI_BK1_IO3_Pin|QSPI_BK1_IO2_Pin|QSPI_BK1_IO0_Pin|QSPI_BK1_IO1_Pin);
+
+    HAL_GPIO_DeInit(QSPI_CLK_GPIO_Port, QSPI_CLK_Pin);
+
+  /* USER CODE BEGIN QUADSPI_MspDeInit 1 */
+
+  /* USER CODE END QUADSPI_MspDeInit 1 */
+  }
+}
+
+/* USER CODE BEGIN 1 */
+
+uint8_t CSP_QSPI_EraseSector(uint32_t EraseStartAddress, uint32_t EraseEndAddress)
 {
     QSPI_CommandTypeDef sCommand;
 
-
-
     //QSPI_EnterQuad();
-
-
 
     EraseStartAddress = EraseStartAddress
                         - EraseStartAddress % MEMORY_SECTOR_SIZE;
@@ -231,7 +251,6 @@ CSP_QSPI_EraseSector( uint32_t EraseStartAddress, uint32_t EraseEndAddress )
     while ( EraseEndAddress >= EraseStartAddress )
     {
         sCommand.Address = ( EraseStartAddress & 0x0FFFFFFF );
-
 
         if ( HAL_OK != QSPI_WriteEnable( ) )
         {
@@ -258,39 +277,6 @@ CSP_QSPI_EraseSector( uint32_t EraseStartAddress, uint32_t EraseEndAddress )
     return HAL_OK;
 }
 
-
-void HAL_QSPI_MspDeInit(QSPI_HandleTypeDef* qspiHandle)
-{
-
-  if(qspiHandle->Instance==QUADSPI)
-  {
-  /* USER CODE BEGIN QUADSPI_MspDeInit 0 */
-
-  /* USER CODE END QUADSPI_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_QSPI_CLK_DISABLE();
-
-    /**QUADSPI GPIO Configuration
-    PG6     ------> QUADSPI_BK1_NCS
-    PF6     ------> QUADSPI_BK1_IO3
-    PF7     ------> QUADSPI_BK1_IO2
-    PF8     ------> QUADSPI_BK1_IO0
-    PF9     ------> QUADSPI_BK1_IO1
-    PB2     ------> QUADSPI_CLK
-    */
-    HAL_GPIO_DeInit(GPIOG, GPIO_PIN_6);
-
-    HAL_GPIO_DeInit(GPIOF, GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9);
-
-    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_2);
-
-  /* USER CODE BEGIN QUADSPI_MspDeInit 1 */
-
-  /* USER CODE END QUADSPI_MspDeInit 1 */
-  }
-}
-
-/* USER CODE BEGIN 1 */
 
 
 static unsigned char
@@ -1188,5 +1174,3 @@ CSP_QUADSPI_Init( void )
     return HAL_OK;
 }
 /* USER CODE END 1 */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
