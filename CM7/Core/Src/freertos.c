@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app_touchgfx.h"
+#include "led_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +46,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+osThreadId ledTaskHandle;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -106,7 +107,10 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+
+  osThreadDef(ledTask, StartLedTask, osPriorityNormal, 0, 2048);
+  ledTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
   /* USER CODE END RTOS_THREADS */
 
 }
@@ -132,5 +136,9 @@ void StartDefaultTask(void const * argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-
+void StartLedTask(void const * argument)
+{
+  /* Infinite loop */
+	LedTaskLoop();
+}
 /* USER CODE END Application */
