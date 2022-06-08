@@ -81,8 +81,6 @@ void Error_Handler(void);
 #define D23_GPIO_Port GPIOH
 #define D22_Pin GPIO_PIN_14
 #define D22_GPIO_Port GPIOH
-#define OSC32_OUT_Pin GPIO_PIN_15
-#define OSC32_OUT_GPIO_Port GPIOC
 #define CTP_RST_Pin GPIO_PIN_14
 #define CTP_RST_GPIO_Port GPIOC
 #define ETH_nINT_Pin GPIO_PIN_2

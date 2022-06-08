@@ -34,7 +34,6 @@
 
 /** Configure pins
      PA14 (JTCK/SWCLK)   ------> DEBUG_JTCK-SWCLK
-     PC15-OSC32_OUT (OSC32_OUT)   ------> RCC_OSC32_OUT
      PA13 (JTMS/SWDIO)   ------> DEBUG_JTMS-SWDIO
      PI8   ------> PWR_WKUP3
      PA8   ------> RCC_MCO_1

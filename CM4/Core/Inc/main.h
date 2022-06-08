@@ -57,8 +57,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define OSC32_OUT_Pin GPIO_PIN_15
-#define OSC32_OUT_GPIO_Port GPIOC
 #define MCO1_Pin GPIO_PIN_8
 #define MCO1_GPIO_Port GPIOA
 #define OSC_OUT_Pin GPIO_PIN_1
