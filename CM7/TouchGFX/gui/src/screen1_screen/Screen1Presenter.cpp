@@ -16,3 +16,13 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter::TurnOnLed()
+{
+	model->TurnOnLed();
+}
+
+void Screen1Presenter::TurnOffLed()
+{
+	model->TurnOffLed();
+}

@@ -1,6 +1,10 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
+extern "C" {
+#include "led_task.h"
+}
+
 Model::Model() : modelListener(0)
 {
 
@@ -9,4 +13,14 @@ Model::Model() : modelListener(0)
 void Model::tick()
 {
 
+}
+
+void Model::TurnOnLed()
+{
+	LedSendMessage(1);
+}
+
+void Model::TurnOffLed()
+{
+	LedSendMessage(0);
 }

@@ -13,6 +13,9 @@ public:
         modelListener = listener;
     }
 
+    virtual void TurnOnLed();
+    virtual void TurnOffLed();
+
     void tick();
 protected:
     ModelListener* modelListener;
