@@ -33,16 +33,16 @@ void LedTaskLoop(void)
 	{
 		LedQueueStatus = LedReadMessage();
 
-		if(LedQueueStatus.status == osOK)
+		if(LedQueueStatus.status == osEventMessage)
 		{
 			switch(LedQueueStatus.value.v)
 			{
 			case 0:
-					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_RESET);
 				break;
 
 			case 1:
-					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_SET);
 				break;
 			}
 		}
