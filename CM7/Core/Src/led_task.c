@@ -49,3 +49,11 @@ void LedTaskLoop(void)
 
 	}
 }
+
+osStatus LedSendMessage(uint8_t LedMessage)
+{
+	osStatus Status;
+
+	Status = osMessagePut(usrLedQueueHandle, LedMessage, osWaitForever);
+	return Status;
+}
