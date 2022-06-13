@@ -12,12 +12,40 @@
 
 #include "gpio.h"
 
+static osMessageQId usrLedQueueHandle;
+
+static osEvent LedReadMessage(void)
+{
+	osEvent Status;
+
+	Status = osMessageGet(usrLedQueueHandle, 0);
+	return Status;
+}
+
 void LedTaskLoop(void)
 {
+	osEvent LedQueueStatus;
+
+	osMessageQDef(usrLedQueue, 4, uint8_t);
+	usrLedQueueHandle = osMessageCreate(osMessageQ(usrLedQueue), NULL);
+
 	for(;;)
 	{
-		HAL_GPIO_TogglePin(USR_LED_GPIO_Port, USR_LED_Pin);
-		osDelay(300);
-		// Infinite Loop
+		LedQueueStatus = LedReadMessage();
+
+		if(LedQueueStatus.status == osOK)
+		{
+			switch(LedQueueStatus.value.v)
+			{
+			case 0:
+					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_SET);
+				break;
+
+			case 1:
+					HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_RESET);
+				break;
+			}
+		}
+
 	}
 }
