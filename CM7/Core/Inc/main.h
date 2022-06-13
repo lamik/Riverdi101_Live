@@ -141,8 +141,8 @@ void Error_Handler(void);
 #define USB1_EN_GPIO_Port GPIOF
 #define QSPI_BK1_IO1_Pin GPIO_PIN_9
 #define QSPI_BK1_IO1_GPIO_Port GPIOF
-#define USR_LED_1_Pin GPIO_PIN_10
-#define USR_LED_1_GPIO_Port GPIOJ
+#define USR_LED_Pin GPIO_PIN_10
+#define USR_LED_GPIO_Port GPIOJ
 #define R_RST_Pin GPIO_PIN_9
 #define R_RST_GPIO_Port GPIOJ
 #define D7_Pin GPIO_PIN_10
