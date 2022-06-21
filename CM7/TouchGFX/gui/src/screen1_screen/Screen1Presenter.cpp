@@ -31,3 +31,8 @@ void Screen1Presenter::ChangePWMValue(int NewValue)
 {
 	model->ChangeBacklightIntesity(NewValue);
 }
+
+void Screen1Presenter::NotifyPwmValueChanged(int CurrentPwmValue)
+{
+    view.SetPwmValue(CurrentPwmValue);
+}

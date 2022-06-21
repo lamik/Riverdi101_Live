@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    virtual void NotifyPwmValueChanged(int CurrentPwmValue) {}
+
 protected:
     Model* model;
 };

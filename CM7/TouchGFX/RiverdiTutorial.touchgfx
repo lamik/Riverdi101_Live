@@ -86,8 +86,8 @@
             "BackgroundY": 22,
             "IndicatorMax": 621,
             "ValueMax": 999,
-            "ValueMin": 100,
-            "InitValue": 100
+            "ValueMin": 40,
+            "InitValue": 40
           },
           {
             "Type": "TextArea",
@@ -96,12 +96,11 @@
             "Y": 701,
             "Width": 103,
             "Height": 25,
-            "LockPosition": true,
             "TextId": "__SingleUse_7APP",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_9H73",
+              "TextId": "__SingleUse_81VC",
               "UseBuffer": true,
               "BufferSize": 10
             }

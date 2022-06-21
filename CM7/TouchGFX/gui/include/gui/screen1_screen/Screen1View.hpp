@@ -17,6 +17,8 @@ public:
 
     virtual void sliderBacklightPWMChanged(int NewValue);
 
+    virtual void SetPwmValue(int CurrentPwmValue);
+
 protected:
 };
 

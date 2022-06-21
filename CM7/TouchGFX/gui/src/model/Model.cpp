@@ -14,6 +14,19 @@ Model::Model() : modelListener(0)
 void Model::tick()
 {
 
+	int CurrentPwmValue;
+	int IsPwmChanged;
+
+	IsPwmChanged = BacklightPwmValueReadMessage(&CurrentPwmValue);
+
+	if(IsPwmChanged == 1)
+	{
+		if (modelListener != 0)
+		{
+			modelListener->NotifyPwmValueChanged(CurrentPwmValue);
+		}
+
+	}
 }
 
 void Model::TurnOnLed()

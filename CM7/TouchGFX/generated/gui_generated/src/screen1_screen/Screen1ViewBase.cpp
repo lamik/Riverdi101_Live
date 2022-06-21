@@ -38,14 +38,14 @@ Screen1ViewBase::Screen1ViewBase() :
     sliderBacklightPWM.setXY(301, 603);
     sliderBacklightPWM.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_INDICATORS_SLIDER_ROUND_NOB_ID));
     sliderBacklightPWM.setupHorizontalSlider(2, 22, 0, 0, 621);
-    sliderBacklightPWM.setValueRange(100, 999);
-    sliderBacklightPWM.setValue(100);
+    sliderBacklightPWM.setValueRange(40, 999);
+    sliderBacklightPWM.setValue(40);
     sliderBacklightPWM.setNewValueCallback(sliderValueChangedCallback);
 
     textAreaPWMValue.setXY(594, 701);
     textAreaPWMValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textAreaPWMValue.setLinespacing(0);
-    Unicode::snprintf(textAreaPWMValueBuffer, TEXTAREAPWMVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9H73).getText());
+    Unicode::snprintf(textAreaPWMValueBuffer, TEXTAREAPWMVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_81VC).getText());
     textAreaPWMValue.setWildcard(textAreaPWMValueBuffer);
     textAreaPWMValue.resizeToCurrentText();
     textAreaPWMValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7APP));

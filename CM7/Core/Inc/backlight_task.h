@@ -14,6 +14,6 @@
 void StartBacklightTask(void const * argument);
 
 osStatus BacklightSendMessage(int BacklightMessage);
-
+int BacklightPwmValueReadMessage(int *PwmValue);
 
 #endif /* APPLICATION_USER_CORE_BACKLIGHT_TASK_H_ */

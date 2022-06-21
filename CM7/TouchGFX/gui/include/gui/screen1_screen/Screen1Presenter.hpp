@@ -30,6 +30,8 @@ public:
 
     virtual void ChangePWMValue(int NewValue);
 
+    virtual void NotifyPwmValueChanged(int CurrentPwmValue);
+
     virtual ~Screen1Presenter() {};
 
 private:
