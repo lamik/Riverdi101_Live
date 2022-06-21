@@ -28,6 +28,8 @@ public:
     virtual void TurnOnLed();
     virtual void TurnOffLed();
 
+    virtual void ChangePWMValue(int NewValue);
+
     virtual ~Screen1Presenter() {};
 
 private:

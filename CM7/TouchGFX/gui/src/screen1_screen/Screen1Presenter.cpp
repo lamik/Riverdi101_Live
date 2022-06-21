@@ -26,3 +26,8 @@ void Screen1Presenter::TurnOffLed()
 {
 	model->TurnOffLed();
 }
+
+void Screen1Presenter::ChangePWMValue(int NewValue)
+{
+	model->ChangeBacklightIntesity(NewValue);
+}

@@ -1,6 +1,5 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 
-
 Screen1View::Screen1View()
 {
 
@@ -24,4 +23,10 @@ void Screen1View::LedOnClicked()
 void Screen1View::LedOffClicked()
 {
 	presenter->TurnOffLed();
+}
+
+void Screen1View::sliderBacklightPWMChanged(int NewValue)
+{
+	// uint16_t NewValue = sliderBacklightPWM.getValue();
+	presenter->ChangePWMValue(NewValue);
 }

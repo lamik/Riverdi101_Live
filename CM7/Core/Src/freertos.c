@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "app_touchgfx.h"
 #include "led_task.h"
+#include "backlight_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,6 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 osThreadId ledTaskHandle;
+osThreadId backlightTaskHandle;
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 
@@ -110,6 +112,9 @@ void MX_FREERTOS_Init(void) {
 
   osThreadDef(ledTask, StartLedTask, osPriorityNormal, 0, 256);
   ledTaskHandle = osThreadCreate(osThread(ledTask), NULL);
+
+  osThreadDef(backlightTask, StartBacklightTask, osPriorityNormal, 0, 256);
+  backlightTaskHandle = osThreadCreate(osThread(backlightTask), NULL);
 
   /* USER CODE END RTOS_THREADS */
 

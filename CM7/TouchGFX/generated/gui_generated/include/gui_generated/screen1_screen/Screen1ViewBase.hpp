@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -32,6 +34,11 @@ public:
         // Override and implement this function in Screen1
     }
 
+    virtual void sliderBacklightPWMChanged(int value)
+    {
+        // Override and implement this function in Screen1
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -45,6 +52,14 @@ protected:
     touchgfx::ScalableImage imageLogo;
     touchgfx::ButtonWithLabel buttonLedOn;
     touchgfx::ButtonWithLabel buttonLedOff;
+    touchgfx::Slider sliderBacklightPWM;
+    touchgfx::TextAreaWithOneWildcard textAreaPWMValue;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAPWMVALUE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaPWMValueBuffer[TEXTAREAPWMVALUE_SIZE];
 
 private:
 
@@ -52,11 +67,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
 
 };
 

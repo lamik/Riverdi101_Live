@@ -7,7 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler),
+    sliderValueChangedCallback(this, &Screen1ViewBase::sliderValueChangedCallbackHandler)
 {
 
     __background.setPosition(0, 0, 1280, 800);
@@ -34,11 +35,28 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonLedOff.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonLedOff.setAction(buttonCallback);
 
+    sliderBacklightPWM.setXY(301, 603);
+    sliderBacklightPWM.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_INDICATORS_SLIDER_ROUND_NOB_ID));
+    sliderBacklightPWM.setupHorizontalSlider(2, 22, 0, 0, 621);
+    sliderBacklightPWM.setValueRange(100, 999);
+    sliderBacklightPWM.setValue(100);
+    sliderBacklightPWM.setNewValueCallback(sliderValueChangedCallback);
+
+    textAreaPWMValue.setXY(594, 701);
+    textAreaPWMValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaPWMValue.setLinespacing(0);
+    Unicode::snprintf(textAreaPWMValueBuffer, TEXTAREAPWMVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9H73).getText());
+    textAreaPWMValue.setWildcard(textAreaPWMValueBuffer);
+    textAreaPWMValue.resizeToCurrentText();
+    textAreaPWMValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7APP));
+
     add(__background);
     add(imageBackground);
     add(imageLogo);
     add(buttonLedOn);
     add(buttonLedOff);
+    add(sliderBacklightPWM);
+    add(textAreaPWMValue);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -61,5 +79,16 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonLedOff clicked call virtual function
         //Call LedOffClicked
         LedOffClicked();
+    }
+}
+
+void Screen1ViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &sliderBacklightPWM)
+    {
+        //sliderBacklightPWMChanged
+        //When sliderBacklightPWM value changed call virtual function
+        //Call sliderBacklightPWMChanged
+        sliderBacklightPWMChanged(value);
     }
 }

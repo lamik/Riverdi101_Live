@@ -14,6 +14,9 @@ public:
 
     virtual void LedOnClicked();
     virtual void LedOffClicked();
+
+    virtual void sliderBacklightPWMChanged(int NewValue);
+
 protected:
 };
 

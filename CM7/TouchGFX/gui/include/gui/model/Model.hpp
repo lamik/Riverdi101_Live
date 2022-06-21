@@ -16,6 +16,8 @@ public:
     virtual void TurnOnLed();
     virtual void TurnOffLed();
 
+    virtual void ChangeBacklightIntesity(int NewValue);
+
     void tick();
 protected:
     ModelListener* modelListener;

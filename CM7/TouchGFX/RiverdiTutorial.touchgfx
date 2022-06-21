@@ -69,6 +69,42 @@
             },
             "TextRotation": "0",
             "Style": "Style4"
+          },
+          {
+            "Type": "Slider",
+            "Name": "sliderBacklightPWM",
+            "X": 301,
+            "Y": 603,
+            "Width": 679,
+            "Height": 58,
+            "LockPosition": true,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Large_Slider_Round_back.png",
+            "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Large_Slider_Round_fill.png",
+            "Indicator": "__designer\\Blue_Slider_Horizontal_Large_Indicators_Slider_Round_nob.png",
+            "BackgroundX": 2,
+            "BackgroundY": 22,
+            "IndicatorMax": 621,
+            "ValueMax": 999,
+            "ValueMin": 100,
+            "InitValue": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaPWMValue",
+            "X": 594,
+            "Y": 701,
+            "Width": 103,
+            "Height": 25,
+            "LockPosition": true,
+            "TextId": "__SingleUse_7APP",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9H73",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [
@@ -92,6 +128,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "LedOffClicked"
+            }
+          },
+          {
+            "InteractionName": "sliderBacklightPWMChanged",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "sliderBacklightPWM"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "sliderBacklightPWMChanged"
             }
           }
         ]
