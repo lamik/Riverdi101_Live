@@ -37,7 +37,7 @@ void StartBacklightTask(void const * argument)
 	osEvent BacklightQueueStatus;
 	osStatus BacklightPwmValueToGuiQueue;
 
-	osMessageQDef(backlightQueue, 32, int);
+	osMessageQDef(backlightQueue, 1, int);
 	backlightReceiveQueueHandle = osMessageCreate(osMessageQ(backlightQueue), NULL);
 
 	osMessageQDef(backlightPwmValueToGuiQueue, 1, uint16_t);
